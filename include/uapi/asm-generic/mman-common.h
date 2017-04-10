@@ -30,9 +30,11 @@
  */
 #define MLOCK_ONFAULT	0x01		/* Lock pages in range after they are faulted in, do not prefault */
 
-#define MS_ASYNC	1		/* sync memory asynchronously */
-#define MS_INVALIDATE	2		/* invalidate the caches */
-#define MS_SYNC		4		/* synchronous memory sync */
+#define MS_ASYNC	0x01		/* sync memory asynchronously */
+#define MS_INVALIDATE	0x02		/* invalidate the caches */
+#define MS_SYNC		0x04		/* synchronous memory sync */
+#define MS_PRIV_WRITE   0x08            /* write through cowed private pages */
+#define MS_PRIV_DROP    0x10		/* drop private cowed private pages */
 
 #define MADV_NORMAL	0		/* no further special treatment */
 #define MADV_RANDOM	1		/* expect random page references */
